@@ -4,7 +4,8 @@ require_once('includes/config.php');
 
 //check if already logged in move to home page
 if ($user->is_logged_in()) {
-    header('Location: ../main.php', true);
+    $user = $_SESSION['user'];
+    header('Location: userLanding.php', true);
     exit();
 }
 
@@ -23,7 +24,7 @@ if (isset($_POST['submit'])) {
 
         if ($user->login($username, $password)) {
             $_SESSION['username'] = $username;
-            header('Refresh: 0; ../main.php', true);
+            header('Refresh: 0; userLanding.php', true);
             exit;
         } else {
             $error[] = 'Wrong username or password or your account has not been activated.';
@@ -39,14 +40,17 @@ $title = 'Login';
 //include header template
 require('layout/header.php');
 ?>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.6/pwacompat.min.js"
-    integrity="sha384-GOaSLecPIMCJksN83HLuYf9FToOiQ2Df0+0ntv7ey8zjUHESXhthwvq9hXAZTifA" crossorigin="anonymous">
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.6/pwacompat.min.js"
+            integrity="sha384-GOaSLecPIMCJksN83HLuYf9FToOiQ2Df0+0ntv7ey8zjUHESXhthwvq9hXAZTifA" crossorigin="anonymous">
+    </script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-<body class="backgroundColor">
+    <body class="backgroundColor">
     <link rel="manifest" href="../manifest.json">
     <link rel="stylesheet" type="text/css" href="../css/mainstyle.css">
     <!--link rel="stylesheet" type="text/css" href="../css/landscape.css"-->
@@ -59,7 +63,8 @@ require('layout/header.php');
                     <form role="form" method="post" action="" autocomplete="off">
                         <h2>Please Login</h2>
                         <p>Don't you have an account? Not to worry! Click <a href='register.php'
-                                class="registerButton">Here</a>to register.
+                                                                             class="registerButton"> Here </a>to
+                            register.
                         </p>
 
                         <?php
@@ -88,18 +93,21 @@ require('layout/header.php');
 
                         ?>
 
-                        <div class="form-group">
-                            <input type="text" name="username" id="username" class="form-control input-lg"
-                                placeholder="User Name"
-                                value="<?php if (isset($error)) {
-                                                                                                                                                echo htmlspecialchars($_POST['username'], ENT_QUOTES);
-                                                                                                                                            } ?>"
-                                tabindex="1">
-                        </div>
-
-                        <div class="form-group">
-                            <input type="password" name="password" id="password" class="form-control input-lg"
-                                placeholder="Password" tabindex="3">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="username">Username</label>
+                                <input type="text" name="username" id="username" class="form-control input-lg"
+                                       placeholder="User Name"
+                                       value="<?php if (isset($error)) {
+                                           echo htmlspecialchars($_POST['username'], ENT_QUOTES);
+                                       } ?>"
+                                       tabindex="1">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password" class="form-control input-lg"
+                                       placeholder="Password" tabindex="3">
+                            </div>
                         </div>
 
                         <div class="row">
@@ -110,7 +118,8 @@ require('layout/header.php');
 
                         <div class="row">
                             <div class="col-xs-6 col-md-6">
-                                <input type="submit" name="submit" value="Login" class="loginButton" tabindex="5">
+                                <input class="btn btn-outline-success loginButton" type="submit" name="submit" value="Login"
+                                       tabindex="5">
                             </div>
                         </div>
                     </form>
@@ -119,7 +128,18 @@ require('layout/header.php');
 
         </div>
     </div>
-</body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
+    </body>
 <?php
 //include header template
 require('layout/footer.php');

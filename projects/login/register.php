@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
     if (!$user->isValidUsername($username)) {
         $error[] = 'Usernames must be at least 3 Alphanumeric characters';
     } else {
-        $stmt = $db->prepare('SELECT username FROM players WHERE username = :username');
+        $stmt = $db->prepare('SELECT username FROM users WHERE username = :username');
         $stmt->execute(array(':username' => $username));
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $error[] = 'Please enter a valid email address';
     } else {
-        $stmt = $db->prepare('SELECT email FROM players WHERE email = :email');
+        $stmt = $db->prepare('SELECT email FROM users WHERE email = :email');
         $stmt->execute(array(':email' => $email));
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -72,7 +72,7 @@ if (isset($_POST['submit'])) {
         try {
 
             //insert into database with a prepared statement
-            $stmt = $db->prepare('INSERT INTO players (username,password,email,active) VALUES (:username, :password, :email, :active)');
+            $stmt = $db->prepare('INSERT INTO users (username,password,email,active) VALUES (:username, :password, :email, :active)');
             $stmt->execute(array(
                 ':username' => $username,
                 ':password' => $hashedpassword,
@@ -119,7 +119,9 @@ require('layout/header.php');
     <script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.6/pwacompat.min.js"
             integrity="sha384-GOaSLecPIMCJksN83HLuYf9FToOiQ2Df0+0ntv7ey8zjUHESXhthwvq9hXAZTifA" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" type="text/css" href="../css/mainstyle.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <body class="backgroundColor">
     <div class="bgimg">
@@ -147,41 +149,49 @@ require('layout/header.php');
                         }
                         ?>
                         <!--Registration form-->
-                        <div class="form-group">
-                            <input type="text" name="username" id="username" class="form-control input-lg"
-                                   placeholder="User Name"
-                                   value="<?php if (isset($error)) {
-                                       echo htmlspecialchars($_POST['username'], ENT_QUOTES);
-                                   } ?>"
-                                   tabindex="1">
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" id="email" class="form-control input-lg"
-                                   placeholder="Email Address"
-                                   value="<?php if (isset($error)) {
-                                       echo htmlspecialchars($_POST['email'], ENT_QUOTES);
-                                   } ?>"
-                                   tabindex="2">
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-6">
-                                <div class="form-group">
-                                    <input type="password" name="password" id="password" class="form-control input-lg"
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="username">Username</label>
+                                <input type="text" name="username" id="username" class="form-control input-lg"
+                                       placeholder="User Name"
+                                       value="<?php if (isset($error)) {
+                                           echo htmlspecialchars($_POST['username'], ENT_QUOTES);
+                                       } ?>"
+                                       tabindex="1">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" id="email" class="form-control input-lg"
+                                       placeholder="Email Address"
+                                       value="<?php if (isset($error)) {
+                                           echo htmlspecialchars($_POST['email'], ENT_QUOTES);
+                                       } ?>"
+                                       tabindex="2">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="password">Password</label>
+                                    <input type="password" name="password" id="password"
+                                           class="form-control input-lg"
                                            placeholder="Password" tabindex="3">
                                 </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6">
-                                <div class="form-group">
-                                    <input type="password" name="passwordConfirm" id="passwordConfirm"
-                                           class="form-control input-lg" placeholder="Confirm Password" tabindex="4">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group mb-3">
+                                        <label for="passwordConfirm">Re-Type your Password</label>
+                                        <input type="password" name="passwordConfirm" id="passwordConfirm"
+                                               class="form-control input-lg" placeholder="Confirm Password"
+                                               tabindex="4">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-xs-6 col-md-6"><input type="submit" name="submit" value="Register"
-                                                                  class="registerButton" tabindex="5"></div>
-                        </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <input type="submit" name="submit" value="Register"
+                                           class="btn btn-outline-warning registerButton" tabindex="5">
+                                </div>
+                            </div>
                     </form>
                 </div>
             </div>
@@ -189,6 +199,17 @@ require('layout/header.php');
         </div>
 
     </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
     </body>
 <?php
 //include header template

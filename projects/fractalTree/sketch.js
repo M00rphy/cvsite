@@ -1,17 +1,17 @@
 let angle = 0, slider;
 
 function setup() {
-    createCanvas(640, 480);
-    //slider = createSlider(0, TWO_PI, PI / 7.5, 0.01);
+    createCanvas(400, 400);
+    slider = createSlider(0, TWO_PI, PI / 4, 0.01);
 }
 
 function draw() {
     background(51);
-    //angle = slider.value();
-    angle = PI / 6;
+    angle = slider.value();
     stroke(255);
-    translate(width / 2, height);
-    branch(150);
+    translate(200, height);
+    branch(100);
+
 }
 
 function branch(len) {
@@ -27,6 +27,5 @@ function branch(len) {
         branch(len * 0.67);
         pop();
     }
-
-    //line(0, 0, 0, -len * 0.67);
+    line(0, 0, 0, -len * 0.67);
 }

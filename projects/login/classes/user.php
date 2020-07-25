@@ -41,7 +41,7 @@ class User extends Password
     {
 
         try {
-            $stmt = $this->_db->prepare('SELECT password, username, memberID FROM players WHERE username = :username AND active="Yes" ');
+            $stmt = $this->_db->prepare('SELECT password, username, memberID FROM users WHERE username = :username AND active="Yes" ');
             $stmt->execute(array('username' => $username));
 
             return $stmt->fetch();

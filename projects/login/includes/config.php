@@ -15,7 +15,7 @@ define('DBPASS', $db['pass']);
 define('DBNAME', $db['name']);
 
 //application address
-define('DIR', 'https://lightrain.000webhostapp.com/');
+define('DIR', 'https://lxbytecv.000webhostapp.com/');
 define('SITEEMAIL', 'acbot@erised.x10host.com');
 
 $BBDD_host = DBHOST;

@@ -1,26 +1,9 @@
 <?php
-
-
 // variable de sesion creada en Valid_Form contiene el usuario
-
-
 $BBDD_host = "localhost";
-
 $BBDD_user = "root";
-
 $BBDD_pass = "";
-
 $BBDD_bd = "her";
-
-/*
-$BBDD_host = "localhost";
-
-$BBDD_user = "qcyeer9s9j3i";
-
-$BBDD_pass = "L29edesma12?";
-
-$BBDD_bd = "her";
-*/
 
 $con = mysqli_connect($BBDD_host, $BBDD_user, $BBDD_pass);
 if (mysqli_connect_errno()) {
