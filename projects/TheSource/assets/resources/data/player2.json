@@ -1,0 +1,18 @@
+{
+    "player": {
+        "sx": 0,
+        "sy": 1,
+        "cols": 21,
+        "tilew": 72,
+        "tileh": 97,
+        "frames": 21
+    },
+    "player_attack": {
+        "sx": 0,
+        "sy": 1296,
+        "cols": 3,
+        "tilew": 72,
+        "tileh": 97,
+        "frames": 3
+    }
+}

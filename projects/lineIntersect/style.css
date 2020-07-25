@@ -1,0 +1,14 @@
+  html, body {
+	background-image: linear-gradient(to bottom right, turquoise, blue);
+	    height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px;
+}
+canvas {
+    display: block;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+}

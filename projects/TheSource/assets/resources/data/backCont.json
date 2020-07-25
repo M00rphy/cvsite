@@ -1,0 +1,12 @@
+{
+  "backCont": {
+    "sx": 0,
+    "sy": 0,
+    "cols": 1,
+    "spacingX": 2,
+    "spacingY": 2,
+    "tilew": 299,
+    "tileh": 149,
+    "frames": 1
+  }
+}

@@ -1,0 +1,60 @@
+0: empty
+10: walkable floor dark blue tile
+16: walkable light/dark wood tile floor
+17: walkable light floor with spotlight and dark roof
+31: walkable medium intensity blue tile floor
+32: walkable floor light blue tile
+50: walkable light grass with dark top
+4097: dark bricks with line at bottom
+4098: dark bricks non-lit windows
+4099: dark bricks with lit window
+4100: black walls with 2 lamps
+4101: solid orange wall with painting
+4102: bar solid wall with bottles
+4103: bar solid wall with display
+4104: smudged dark/light bricks
+4105: fading bricks non-lit window
+4109: solid orange walls with piece of paper
+4111: fading bricks with lit window
+4114: brick wall with pipes
+4116: dunk neon post
+4117: brick wall with pipes
+4118: dancer neon post
+4120: fading/smudged brick wall with small green bricks to the right simulating a porch part
+4121: weaven neon post left half
+4122: fading/smudged brick wall with small green bricks to the left simulating a porch part
+4123: weaven neon post right half
+4125: rim neon post left part
+4126: rim neon post right part
+4134: dark bricks with non-lit window
+4142: solid dark trees.
+4143: solid light trees
+
+8227: sliding brick-door
+
+16418: sliding lamp hidden door
+
+24595: standard wooden door
+
+32804: hidden window bricked door double slide
+32807: sliding window/door
+32820: wooden door with trees aside
+36897: secret orange door with paintings and white page
+36901: secret brick-door
+
+
+40971: transparent walls with iluminated floor
+40972: transparent walls with iluminated floor
+40974: transparent counter
+
+40983: Transparent 6 grid frontal orange window
+
+41000: transparent gates
+41004: solid tall bushes
+
+41011: transparent gates with trees behind
+41013: transparent gates with trees in front
+41014: low fence
+41015: first character in the game (right now maus)
+
+2138140: Transparent single glass offset orange window

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Register</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <style>
+        html {
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.6/pwacompat.min.js"
+        integrity="sha384-GOaSLecPIMCJksN83HLuYf9FToOiQ2Df0+0ntv7ey8zjUHESXhthwvq9hXAZTifA" crossorigin="anonymous">
+</script>
+<link rel="stylesheet" type="text/css" href="../css/mainstyle.css">
+
+<div class="container">
+    <div class="col-sm-6 col-sm-offset-3">
+        <h2>Register</h2>
+
+        <% if(message.length > 0) { %>
+            <div class="alert alert-danger"><%= message %></div>
+        <% } %>
+
+        <form action="/signup" method="post" autocomplete="off">
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" class="form-control" name="username">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" class="form-control" name="email">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password">
+            </div>
+            <div class="form-group">
+                <label>Confirm your password</label>
+                <input type="password" class="form-control" name="password2">
+            </div>
+
+            <button type="submit" class="registerButton" tabindex="5">Register</button>
+        </form>
+
+        <hr>
+
+        <p>Need an account <a href="/signup">Register</a></p>
+        <p>Go Back <a href="/">Home</a>.</p>
+    </div>
+</div>
+</body>
+</html>

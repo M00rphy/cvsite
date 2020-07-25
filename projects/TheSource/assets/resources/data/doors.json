@@ -1,0 +1,34 @@
+{
+  "door_closed": {
+    "sx": 0,
+    "sy": 0,
+    "cols": 1,
+    "tilew": 70,
+    "tileh": 110,
+    "frames": 1
+  },
+  "door_opening": {
+    "sx": 210,
+    "sy": 0,
+    "cols": 5,
+    "tilew": 70,
+    "tileh": 110,
+    "frames": 5
+  },
+  "door_open": {
+    "sx": 350,
+    "sy": 0,
+    "cols": 1,
+    "tilew": 70,
+    "tileh": 110,
+    "frames": 1
+  },
+  "portal": {
+    "sx": 420,
+    "sy": 0,
+    "cols": 1,
+    "tilew": 70,
+    "tileh": 110,
+    "frames": 1
+  }
+}

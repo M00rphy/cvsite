@@ -1,0 +1,11 @@
+1.- Finish making the fourth level map (labyrinth style) with the troll dead ends.
+2.- Add the bg music (suspended temporarily).
+3.- Change the sound effects (almost done).
+4.- Change the gun sprites(done... for now).
+5.- Make the fake login page(discarded for now).
+6.- Upload the site to FTP server(done).
+7.- Re-texturize the maps properly(done so far).
+8.- Finish implementing the "boomerang" weapon.
+9.- Change the ET dead animation.
+10.- Add more enemies rather than more ET's.
+11.- Check for the limits of the playfield.

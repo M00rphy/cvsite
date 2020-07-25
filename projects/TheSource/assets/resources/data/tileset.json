@@ -1,0 +1,12 @@
+{
+    "Tiles": {
+        "sx": 0,
+        "sy": 0,
+        "cols": 51,
+        "tilew": 70,
+        "tileh": 70,
+        "frames": 1,
+        "rows": 51,
+        "spacingY": 0
+    }
+}

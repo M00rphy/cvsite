@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>A trippy Doom by STGraves.</title>
+
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/library.js"></script>
+        <script src="assets/js/mainloop.js"></script>
+        <script src="assets/js/scenes.js"></script>
+        <style>
+
+            .ge-mainscreen {
+                display: inline-block;
+                position: fixed;
+                left: 235px;
+            }        
+
+            .ge-minimap {
+                display: inline;
+                position: fixed;
+                left: 15px;
+                top: 150px;
+            }
+
+            .ge-minimap canvas {
+                border: solid 1px;
+            }
+            .ge-debug {
+                display: inline-block;
+                color: gray;
+            }
+            body {
+                background-color: black;
+            }
+
+        </style>
+
+    </head>
+    
+    <body onload="atd.main.init()">
+        <div class="ge-debug" id="debug"></div>
+        <canvas class="ge-mainscreen" id="screen"></canvas>    
+      <div class="ge-minimap" id="minimap"></div>
+    </body>
+</html>
