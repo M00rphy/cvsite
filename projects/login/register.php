@@ -21,17 +21,6 @@ if (isset($_POST['submit'])) {
     $username = $_POST['username'];
 
     //very basic validation
-    if (!$user->isValidUsername($username)) {
-        $error[] = 'Usernames must be at least 3 Alphanumeric characters';
-    } else {
-        $stmt = $db->prepare('SELECT username FROM users WHERE username = :username');
-        $stmt->execute(array(':username' => $username));
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if (!empty($row['username'])) {
-            $error[] = 'Username provided is already in use.';
-        }
-    }
 
     if (strlen($_POST['password']) < 3) {
         $error[] = 'Password is too short.';
@@ -45,29 +34,13 @@ if (isset($_POST['submit'])) {
         $error[] = 'Passwords do not match.';
     }
 
-    //email validation
     $email = htmlspecialchars_decode($_POST['email'], ENT_QUOTES);
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $error[] = 'Please enter a valid email address';
-    } else {
-        $stmt = $db->prepare('SELECT email FROM users WHERE email = :email');
-        $stmt->execute(array(':email' => $email));
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if (!empty($row['email'])) {
-            $error[] = 'Email provided is already in use.';
-        }
-    }
-
 
     //if no errors have been created carry on
     if (!isset($error)) {
 
         //hash the password
         $hashedpassword = $user->password_hash($_POST['password'], PASSWORD_BCRYPT);
-
-        //create the activasion code
-        $activasion = md5(uniqid(rand(), true));
 
         try {
 
@@ -77,25 +50,10 @@ if (isset($_POST['submit'])) {
                 ':username' => $username,
                 ':password' => $hashedpassword,
                 ':email' => $email,
-                ':active' => $activasion
+                ':active' => 'Yes'
             ));
             $id = $db->lastInsertId('memberID');
 
-            //send email
-            $to = $_POST['email'];
-            $subject = "Account Activation.";
-            $body = "<p>Thank you for registering on The Source!.</p>
-            <p>To activate your account, please click on this link: <a href='" . DIR . "/errorLogs/login/activate.php?x=$id&y=$activasion'>" . DIR . "/errorLogs/login/activate.php?x=$id&y=$activasion</a></p>
-            <p>Kind regards: Account Bot :) </p>";
-
-            mail($to, "Account Activation.", $body);
-
-            $mail = new Mail();
-            $mail->setFrom(SITEEMAIL);
-            $mail->addAddress($to);
-            $mail->subject($subject);
-            $mail->body($body);
-            $mail->send();
             //redirect to index page
             header('Location: login.php?action=joined');
             exit;
