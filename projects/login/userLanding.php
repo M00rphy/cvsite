@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (empty($_SESSION['username'])) {
+    echo '<script>alert("You are not logged in!");</script>';
+    header("Refresh: 0; logout.php", true);
+    exit();
+}
+?>
 <!doctype html>
 <html ng-app lang="en">
 <head>
