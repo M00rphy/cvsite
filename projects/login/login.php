@@ -118,7 +118,8 @@ require('layout/header.php');
 
                         <div class="row">
                             <div class="col-xs-6 col-md-6">
-                                <input class="btn btn-outline-success loginButton" type="submit" name="submit" value="Login"
+                                <input class="btn btn-outline-success loginButton" type="submit" name="submit"
+                                       value="Login"
                                        tabindex="5">
                             </div>
                         </div>

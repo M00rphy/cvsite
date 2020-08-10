@@ -36,7 +36,6 @@
             <li><a class="smoothscroll" href="#about">Acerca</a></li>
             <li><a class="smoothscroll" href="#resume">Curriculum</a></li>
             <li><a class="smoothscroll" href="#portfolio">Portafolio</a></li>
-            <li><a class="smoothscroll" href="#contact">Contacto</a></li>
         </ul>
 
     </nav>
@@ -86,6 +85,7 @@
                 Tengo 23 años, actualmente soy estudiante de Ingeniería en Tecnologías de Información y
                 Comunicaciones en el Instituto Tecnológico de Tlalnepantla.
                 Los lenguajes de programación en los que tengo mejor dominio son:
+
             <li>JavaScript</li>
             <li>Java</li>
             <li>C#</li>
@@ -98,6 +98,7 @@
             <li>CSS3</li>
             <li>SQL y Bases de Datos Relacionales</li>
             <li>Entre otros</li>
+
             </p>
 
             <div class="row">
@@ -118,7 +119,7 @@
 
                 <div class="columns download">
                     <p>
-                        <a href="inc/CV.pdf" class="button"><i class="fa fa-download"></i>Descargar Curriculum Corto</a>
+                        <!--a href="inc/CV.pdf" class="button"><i class="fa fa-download"></i>Descargar Curriculum Corto</a-->
                         <a href="inc/CV.pdf" class="button"><i class="fa fa-download"></i>Descargar Curriculum</a>
                     </p>
                 </div>
@@ -369,6 +370,23 @@
                     </div>
                 </div>
 
+                <div class="columns portfolio-item">
+                    <div class="item-wrap">
+
+                        <a href="#atariGames" title="Atari Games">
+                            <img alt="" src="images/portfolio/atari.png">
+                            <div class="overlay">
+                                <div class="portfolio-item-meta">
+                                    <h5>Juegos de Atari 2600</h5>
+                                    <p>Videojuego</p>
+                                </div>
+                            </div>
+                            <div class="link-icon"><i class="icon-plus"></i></div>
+                        </a>
+
+                    </div>
+                </div>
+
             </div>
 
         </div>
@@ -492,94 +510,23 @@
 
         </div>
 
+        <div id="atariGames" class="popup-modal mfp-hide">
 
-    </div>
+            <img class="scale-with-grid" src="images/portfolio/modals/m-atari.png" alt=""/>
 
-</section>
+            <div class="description-box">
+                <h4>Juegos de Atari 2600</h4>
+                <p>Juegos de Atari 2600 desarrollados por mi.</p>
+                <span class="categories"><i class="fa fa-tag"></i>GameDev, WebDev</span>
+            </div>
 
-
-<section id="contact">
-
-    <div class="row section-head">
-
-        <div class="two columns header-col">
-
-            <h1><span>Contáctame.</span></h1>
-
-        </div>
-
-        <div class="ten columns">
-
-            <p class="lead">Deja tu mensaje, con gusto responderé ;)
-            </p>
-
-        </div>
-
-    </div>
-
-    <div class="row">
-
-        <div class="eight columns">
-
-            <!-- form -->
-            <form action="" method="post" id="contactForm" name="contactForm">
-                <fieldset>
-
-                    <div>
-                        <label for="contactName">Nombre <span class="required">*</span></label>
-                        <input type="text" value="" size="35" id="contactName" name="contactName">
-                    </div>
-
-                    <div>
-                        <label for="contactEmail">Email <span class="required">*</span></label>
-                        <input type="text" value="" size="35" id="contactEmail" name="contactEmail">
-                    </div>
-
-                    <div>
-                        <label for="contactSubject">Asunto</label>
-                        <input type="text" value="" size="35" id="contactSubject" name="contactSubject">
-                    </div>
-
-                    <div>
-                        <label for="contactMessage">Mensaje <span class="required">*</span></label>
-                        <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
-                    </div>
-
-                    <div>
-                        <button class="submit">Enviar</button>
-                        <span id="image-loader">
-                                <img alt="" src="images/loader.gif">
-                            </span>
-                    </div>
-
-                </fieldset>
-            </form> <!-- Form End -->
-
-            <!-- contact-warning -->
-            <div id="message-warning"> Error boy</div>
-            <!-- contact-success -->
-            <div id="message-success">
-                <i class="fa fa-check"></i>Your message was sent, thank you!<br>
+            <div class="link-box">
+                <a href="projects/atari/index.php">Detalles</a>
+                <a class="popup-modal-dismiss">Cerrar</a>
             </div>
 
         </div>
 
-
-        <aside class="four columns footer-widgets">
-
-            <div class="widget widget_contact">
-
-                <h4>Dirección y Teléfono</h4>
-                <p class="address">
-                    Alexis García<br>
-                    Atenco #25, <br>
-                    Col. Prado Ixtacala, Tlalnepantla de Baz, Estado de México<br>
-                    <span>(+52) 55 3401 7838</span>
-                </p>
-
-            </div>
-
-        </aside>
 
     </div>
 
