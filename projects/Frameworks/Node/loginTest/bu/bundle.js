@@ -81419,7 +81419,7 @@ function SendStream (req, path, options) {
 
   this._index = opts.index !== undefined
     ? normalizeList(opts.index, 'index option')
-    : ['index.html']
+    : ['index.php']
 
   this._lastModified = opts.lastModified !== undefined
     ? Boolean(opts.lastModified)

@@ -1,4 +1,6 @@
 {
+  "name": "The Source",
+  "short_name": "TS",
   "theme_color": "#2196f3",
   "background_color": "#2196f3",
   "display": "fullscreen",
