@@ -1,3 +1,7 @@
+* {
+    /*overflow-x: hidden;*/
+}
+
 table {
     color: black;
     border: 1px solid black;
@@ -33,7 +37,22 @@ table th {
 
 .neonText {
     animation: pulsate 0.11s ease-in-out infinite alternate;
+    z-index: 300;
+    position: relative;
+
+    user-select: none;
+    -drag: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
 }
+
+/*
+h1 .neonText {
+    animation: pulsate 0.11s ease-in-out infinite alternate;
+    z-index: 300;
+    position: relative;
+}*/
 
 .sq-com:before {
 
@@ -48,44 +67,82 @@ table th {
     text-transform: none;
     speak: none;
     -webkit-font-smoothing: antialiased;
+    /*0 0 150px */
+    /*filter: invert(100) drop-shadow(0 0rem 2.5rem #5D3FD3);*/
     filter: invert(100);
 
     /*width: 8% !important;*/
     width: 12% !important;
     height: auto !important;
+
+    animation: pulsate 0.11s ease-in-out infinite alternate;
+
 }
 
 #canvas {
-    z-index: 999;
+    z-index: 99;
     position: absolute;
+    width: 100%;
+    height: auto;
 }
 
 .banner-text {
     z-index: 9999;
 }
 
+.smoothscroll {
+    position: relative;
+    z-index: 300;
+}
+
+a {
+    color: white !important;
+    text-underline: #5D3FD3;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #8163f6;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #4e2ec9;
+}
+
 @keyframes pulsate {
     100% {
         /* Larger blur radius */
         text-shadow: 0 0 4px #fff,
-        0 0 11px #fff,
-        0 0 19px #fff,
-        0 0 40px #5D3FD3,
-        0 0 80px #5D3FD3,
-        0 0 90px #5D3FD3,
-        0 0 100px #5D3FD3,
-        0 0 150px #5D3FD3;
+            0 0 11px #fff,
+            0 0 19px #fff,
+            0 0 40px #5D3FD3,
+            0 0 80px #5D3FD3,
+            0 0 90px #5D3FD3,
+            0 0 100px #5D3FD3,
+            0 0 150px #5D3FD3;
     }
+
     0% {
         /* A slightly smaller blur radius */
         text-shadow: 0 0 4px #fff,
-        0 0 10px #fff,
-        0 0 18px #fff,
-        0 0 38px #5D3FD3,
-        0 0 73px #5D3FD3,
-        0 0 80px #5D3FD3,
-        0 0 94px #5D3FD3,
-        0 0 140px #5D3FD3;
+            0 0 10px #fff,
+            0 0 18px #fff,
+            0 0 38px #5D3FD3,
+            0 0 73px #5D3FD3,
+            0 0 80px #5D3FD3,
+            0 0 94px #5D3FD3,
+            0 0 140px #5D3FD3;
     }
 }
 

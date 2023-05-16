@@ -55,15 +55,16 @@ $edad = $from->diff($to)->y;
 
     <div class="row banner">
         <div class="banner-text">
-            <h1 class="responsive-headline neonText">Soy <span class="border-0"><img class="sq-com"
-                                                                                     src="images/sqcompass.webp"></span>lexis
-                Garcia</a>.</h1>
+            <h1 class="responsive-headline neonText">Soy <span><img class="sq-com"
+                                                                    src="images/sqcompass.webp"></span>lexis
+                Garcia</a></h1>
 
             <h3 class="neonText">
-                <span class="typed"
-                      data-typed-items="WebDev, GameDev, Dev, Una Mente Creativa y De Buenas Costumbres"></span>
-                <hr/>
-                <h2><a class="smoothscroll neonText" href="#about">Quien soy yo?.</a></h2>
+
+
+                <h2><a class="smoothscroll neonText" href="#about">Quien soy yo? <br><span class="typed"
+                                                                                       data-typed-items="WebDev, GameDev, Dev, Una Mente Creativa y De Buenas Costumbres"></span></a>
+                </h2>
             </h3>
 
             <hr/>

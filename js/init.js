@@ -1,33 +1,48 @@
-/*-----------------------------------------------------------------------------------
-/*
-/* Init JS
-/*
------------------------------------------------------------------------------------*/
+$(function () {
 
-jQuery(document).ready(function ($) {
+    const clickSfx = new Audio('audio/sfx/click3.ogg');
+    clickSfx.volume = 0.5
+    const click2Sfx = new Audio('audio/sfx/menuclickup.ogg');
 
-   const select = (el, all = false) => {
-      el = el.trim()
-      if (all) {
-         return [...document.querySelectorAll(el)]
-      } else {
-         return document.querySelector(el)
-      }
-   }
+    document.addEventListener('click', () => {
+        document.getElementById('nav').querySelectorAll('li').forEach(navBtn => {
+            navBtn.addEventListener('click', () => {
+                click2Sfx.play();
+            })
+        })
+
+        // console.log(document.querySelector('.social'));
+        document.querySelector('.social').querySelectorAll('li').forEach(navBtn => {
+            navBtn.addEventListener('click', () => {
+                click2Sfx.play();
+            })
+        })
+        clickSfx.play();
+    })
+
+
+    const select = (el, all = false) => {
+        el = el.trim();
+        if (all) {
+            return [...document.querySelectorAll(el)];
+        } else {
+            return document.querySelector(el);
+        }
+    };
 
     /*----------------------------------------------------*/
     /* FitText Settings
     ------------------------------------------------------ */
-
     setTimeout(function () {
-        $('h1.responsive-headline').fitText(1, {minFontSize: '40px', maxFontSize: '90px'});
+        $('h1.responsive-headline').fitText(1, {
+            minFontSize: '40px',
+            maxFontSize: '90px'
+        });
     }, 100);
-
 
     /*----------------------------------------------------*/
     /* Smooth Scrolling
     ------------------------------------------------------ */
-
     $('.smoothscroll').on('click', function (e) {
         e.preventDefault();
 
@@ -41,53 +56,39 @@ jQuery(document).ready(function ($) {
         });
     });
 
-
     /*----------------------------------------------------*/
     /* Highlight the current section in the navigation bar
     ------------------------------------------------------*/
-
     var sections = $("section");
     var navigation_links = $("#nav-wrap a");
 
     sections.waypoint({
-
         handler: function (event, direction) {
-
             var active_section;
-
             active_section = $(this);
             if (direction === "up") active_section = active_section.prev();
 
             var active_link = $('#nav-wrap a[href="#' + active_section.attr("id") + '"]');
-
             navigation_links.parent().removeClass("current");
             active_link.parent().addClass("current");
-
         },
         offset: '35%'
-
     });
-
 
     /*----------------------------------------------------*/
     /*	Make sure that #header-background-image height is
     /* equal to the browser height.
     ------------------------------------------------------ */
-
-    $('header').css({'height': $(window).height()});
+    $('header').css({ 'height': $(window).height() });
     $(window).on('resize', function () {
-
-        $('header').css({'height': $(window).height()});
-        $('body').css({'width': $(window).width()})
+        $('header').css({ 'height': $(window).height() });
+        $('body').css({ 'width': $(window).width() });
     });
-
 
     /*----------------------------------------------------*/
     /*	Fade In/Out Primary Navigation
     ------------------------------------------------------*/
-
     $(window).on('scroll', function () {
-
         var h = $('header').height();
         var y = $(window).scrollTop();
         var nav = $('#nav-wrap');
@@ -101,29 +102,23 @@ jQuery(document).ready(function ($) {
                 nav.addClass('opaque').fadeIn('fast');
             }
         }
-
     });
-
 
     /*----------------------------------------------------*/
     /*	Modal Popup
     ------------------------------------------------------*/
-
     $('.item-wrap a').magnificPopup({
-
         type: 'inline',
         fixedContentPos: false,
         removalDelay: 200,
         showCloseBtn: false,
         mainClass: 'mfp-fade'
-
     });
 
     $(document).on('click', '.popup-modal-dismiss', function (e) {
         e.preventDefault();
         $.magnificPopup.close();
     });
-
 
     /*----------------------------------------------------*/
     /*	Flexslider
@@ -137,15 +132,14 @@ jQuery(document).ready(function ($) {
         smoothHeight: true,
         slideshowSpeed: 7000,
         animationSpeed: 600,
-        randomize: false,
+        randomize: false
     });
 
     /*----------------------------------------------------*/
     /*	contact form
     ------------------------------------------------------*/
-
-    $('form#contactForm button.submit').click(function () {
-
+    $('form#contactForm button.submit').click(function
+        () {
         $('#image-loader').fadeIn();
 
         var contactName = $('#contactForm #contactName').val();
@@ -157,12 +151,10 @@ jQuery(document).ready(function ($) {
             '&contactSubject=' + contactSubject + '&contactMessage=' + contactMessage;
 
         $.ajax({
-
             type: "POST",
             url: "inc/sendEmail.php",
             data: data,
             success: function (msg) {
-
                 // Message was sent
                 if (msg == 'OK') {
                     $('#image-loader').fadeOut();
@@ -176,26 +168,21 @@ jQuery(document).ready(function ($) {
                     $('#message-warning').html(msg);
                     $('#message-warning').fadeIn();
                 }
-
             }
-
         });
         return false;
     });
 
-
-   const typed = select('.typed')
-   if (typed) {
-      let typed_strings = typed.getAttribute('data-typed-items')
-      typed_strings = typed_strings.split(',')
-      new Typed('.typed', {
-         strings: typed_strings,
-         loop: true,
-         typeSpeed: 50,
-         backSpeed: 50,
-         backDelay: 1000
-      });
-   }
-
-
+    const typed = select('.typed');
+    if (typed) {
+        let typed_strings = typed.getAttribute('data-typed-items');
+        typed_strings = typed_strings.split(',');
+        new Typed('.typed', {
+            strings: typed_strings,
+            loop: true,
+            typeSpeed: 50,
+            backSpeed: 50,
+            backDelay: 1000
+        });
+    }
 });
