@@ -1,0 +1,139 @@
+table {
+    color: black;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+table caption {
+    font-size: 1.5em;
+    margin: .5em 0 .75em;
+}
+
+table tr {
+    background-color: white;
+    border: 1px solid black;
+    padding: .35em;
+}
+
+table th,
+table td {
+    padding: .625em;
+    text-align: center;
+}
+
+table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.neonText {
+    animation: pulsate 0.11s ease-in-out infinite alternate;
+}
+
+.sq-com:before {
+
+    display: block;
+    content: url(../images/sqcompass.svg);
+}
+
+.sq-com {
+    border: 0 !important;
+    text-rendering: auto;
+    display: inline !important;
+    text-transform: none;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    filter: invert(100);
+
+    /*width: 8% !important;*/
+    width: 12% !important;
+    height: auto !important;
+}
+
+#canvas {
+    z-index: 999;
+    position: absolute;
+}
+
+.banner-text {
+    z-index: 9999;
+}
+
+@keyframes pulsate {
+    100% {
+        /* Larger blur radius */
+        text-shadow: 0 0 4px #fff,
+        0 0 11px #fff,
+        0 0 19px #fff,
+        0 0 40px #5D3FD3,
+        0 0 80px #5D3FD3,
+        0 0 90px #5D3FD3,
+        0 0 100px #5D3FD3,
+        0 0 150px #5D3FD3;
+    }
+    0% {
+        /* A slightly smaller blur radius */
+        text-shadow: 0 0 4px #fff,
+        0 0 10px #fff,
+        0 0 18px #fff,
+        0 0 38px #5D3FD3,
+        0 0 73px #5D3FD3,
+        0 0 80px #5D3FD3,
+        0 0 94px #5D3FD3,
+        0 0 140px #5D3FD3;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    table {
+        border: 0;
+    }
+
+    table caption {
+        font-size: 1.3em;
+    }
+
+    table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+    }
+
+    table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+    }
+
+    table td::before {
+        /*
+        * aria-label has no advantage, it won't be read inside a table
+        content: attr(aria-label);
+        */
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
+}

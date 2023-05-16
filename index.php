@@ -1,5 +1,4 @@
 <?php
-$año = date("Y");
 $from = new DateTime('1997-03-13');
 $to = new DateTime('today');
 $edad = $from->diff($to)->y;
@@ -13,105 +12,32 @@ $edad = $from->diff($to)->y;
     <title>CV</title>
     <meta name="description" content="My CV">
     <meta name="author" content="Alexis">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/media-queries.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
-    <style>
-        table {
-            color: black;
-            border: 1px solid black;
-            border-collapse: collapse;
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            table-layout: fixed;
-        }
 
-        table caption {
-            font-size: 1.5em;
-            margin: .5em 0 .75em;
-        }
+    <script src="https://kit.fontawesome.com/10ae283bae.js"></script>
+    <script defer src="js/modernizr.js"></script>
 
-        table tr {
-            background-color: white;
-            border: 1px solid black;
-            padding: .35em;
-        }
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
-        table th,
-        table td {
-            padding: .625em;
-            text-align: center;
-        }
+    <script src="https://unpkg.com/starback@2.1.1/dist/starback.global.js"></script>
 
-        table th {
-            font-size: .85em;
-            letter-spacing: .1em;
-            text-transform: uppercase;
-        }
-
-        @media screen and (max-width: 600px) {
-            table {
-                border: 0;
-            }
-
-            table caption {
-                font-size: 1.3em;
-            }
-
-            table thead {
-                border: none;
-                clip: rect(0 0 0 0);
-                height: 1px;
-                margin: -1px;
-                overflow: hidden;
-                padding: 0;
-                position: absolute;
-                width: 1px;
-            }
-
-            table tr {
-                border-bottom: 3px solid #ddd;
-                display: block;
-                margin-bottom: .625em;
-            }
-
-            table td {
-                border-bottom: 1px solid #ddd;
-                display: block;
-                font-size: .8em;
-                text-align: right;
-            }
-
-            table td::before {
-                /*
-                * aria-label has no advantage, it won't be read inside a table
-                content: attr(aria-label);
-                */
-                content: attr(data-label);
-                float: left;
-                font-weight: bold;
-                text-transform: uppercase;
-            }
-
-            table td:last-child {
-                border-bottom: 0;
-            }
-        }
-    </style>
-
-    <script defer scr="js/modernizr.js"></script>
     <link rel="shortcut icon" href="favicon.ico">
-
 </head>
 
 <body onload="test2()">
+<canvas id="canvas"></canvas>
 
 <header id="home">
+
 
     <nav id="nav-wrap">
 
@@ -129,17 +55,21 @@ $edad = $from->diff($to)->y;
 
     <div class="row banner">
         <div class="banner-text">
-            <h1 class="responsive-headline">Soy Alexis García.</h1>
-            <h3>Soy un desarrollador de software, <span>desarrollador web y </span><span>desarrollador de
-                            videojuegos</span>
-                <span>ubicado en México. </span>
+            <h1 class="responsive-headline neonText">Soy <span class="border-0"><img class="sq-com"
+                                                                                     src="images/sqcompass.webp"></span>lexis
+                Garcia</a>.</h1>
+
+            <h3 class="neonText">
+                <span class="typed"
+                      data-typed-items="WebDev, GameDev, Dev, Una Mente Creativa y De Buenas Costumbres"></span>
                 <hr/>
-                <h2><a style="color: #00e100" class="smoothscroll" href="#about">Quien soy yo?.</a></h2>
+                <h2><a class="smoothscroll neonText" href="#about">Quien soy yo?.</a></h2>
             </h3>
+
             <hr/>
             <ul class="social">
                 <li><a href="https://www.linkedin.com/in/alexis-garc%C3%ADa-6019a817b/"><i
-                                class="fa fa-linkedin"></i></a></li>
+                            class="fa fa-linkedin"></i></a></li>
                 <li><a href="https://www.instagram.com/reptilian_hacker/"><i class="fa fa-instagram"></i></a></li>
                 <li><a href="https://github.com/M00rphy"><i class="fa fa-github"></i></a></li>
             </ul>
@@ -166,20 +96,15 @@ $edad = $from->diff($to)->y;
 
             <h2>Acerca de mi.</h2>
 
-            <p class="aboutme">Soy un desarrollador web, desarrollador de software, desarrollador
-                de videojuegos y
-                programador en
-                general.
-                Tengo <?php echo $edad ?> años, actualmente soy estudiante de Ingeniería en Tecnologías de Información y
-                Comunicaciones en el Instituto Tecnológico de Tlalnepantla.
-
+            <p class="aboutme">
+                Tengo <?php echo $edad ?> años, y cuento con experiencia en varias tecnologías Web.
             </p>
 
             <div class="row">
 
                 <div class="columns contact-details">
 
-                    <h2>Jugar de contacto</h2>
+                    <h2>Lugar de contacto</h2>
                     <p class="address">
                         <span>Alexis García</span><br>
                         <span>Atenco #25,<br>
@@ -222,7 +147,7 @@ $edad = $from->diff($to)->y;
 
                     <h3>Instituto Tecnológico de Tlalnepantla</h3>
                     <p class="info">Ingeniería en Tecnologías de Información y Comunicaciones <span>&bull;</span>
-                        <em class="date">Aún cursando.</em>
+                        <em class="date">2016 - Trunca.</em>
                     </p>
 
                 </div>
@@ -235,7 +160,7 @@ $edad = $from->diff($to)->y;
 
                     <h3>Microsoft Office Specialist</h3>
                     <p class="info">Certificación como Especialista en manejo de Excel 2010 <span>&bull;</span> <em
-                                class="date">March
+                            class="date">March
                             2003</em></p>
                 </div>
 
@@ -257,24 +182,29 @@ $edad = $from->diff($to)->y;
             <div class="row item">
 
                 <div class="twelve columns">
+                    <div id="jobExp">
+                        <h3>Desarrollador Independiente de VideoJuegos</h3>
+                        <p class="info">Desarrollador líder <span>&bull;</span> <em class="date">Junio 2013 -
+                                Presente</em></p>
+                        <p class="info">Diseñador líder <span>&bull;</span> <em class="date">Junio 2013 -
+                                Presente</em></p>
+                        <p class="info">Líder de proyecto <span>&bull;</span> <em class="date">Junio 2013 -
+                                Presente</em></p>
+                        <p class="info">Scoring <span>&bull;</span> <em class="date">Enero 2018 -
+                                Presente</em></p>
+                        <p class="info">Compositor <span>&bull;</span> <em class="date">Enero 2018 -
+                                Presente</em></p>
+                        <p class="info">Animador <span>&bull;</span> <em class="date">Junio
+                                2013 -
+                                Presente</em></p>
 
-                    <h3>Desarrollador Independiente de VideoJuegos</h3>
-                    <p class="info">Desarrollador líder <span>&bull;</span> <em class="date">Junio 2013 -
-                            Presente</em></p>
-                    <p class="info">Diseñador líder <span>&bull;</span> <em class="date">Junio 2013 -
-                            Presente</em></p>
-                    <p class="info">Líder de proyecto <span>&bull;</span> <em class="date">Junio 2013 -
-                            Presente</em></p>
-                    <p class="info">Scoring <span>&bull;</span> <em class="date">Enero 2018 -
-                            Presente</em></p>
-                    <p class="info">Compositor <span>&bull;</span> <em class="date">Enero 2018 -
-                            Presente</em></p>
-                    <p class="info">Animador <span>&bull;</span> <em class="date">Junio
-                            2013 -
-                            Presente</em></p>
-                    <h3>Desarrollador en Nomanches</h3>
-                    <p class="info">Desarrollador web líder <span>&bull;</span> <em class="date">Febrero 2018 -
-                            Presente</em></p>
+
+                        <h3>Desarrollador en Nomanches</h3>
+                        <p class="info">Desarrollador web líder <span>&bull;</span> <em class="date">Febrero 2018 -
+                                Presente</em></p>
+                    </div>
+
+
                 </div>
 
             </div>
@@ -618,16 +548,16 @@ $edad = $from->diff($to)->y;
 
             <ul class="social-links">
                 <li><a href="https://www.linkedin.com/in/alexis-garc%C3%ADa-6019a817b/"><i
-                                class="fa fa-linkedin"></i></a></li>
+                            class="fa fa-linkedin"></i></a></li>
                 <li><a href="https://www.instagram.com/reptilian_hacker/"><i class="fa fa-instagram"></i></a></li>
                 <li><a href="https://github.com/M00rphy"><i class="fa fa-github"></i></a></li>
             </ul>
 
             <div class="banner" style="color: #FFFFFF">
                 <ul class="copyright">
-                    <li>&copy; Copyright 2019 - <?php echo $año ?></li>
+                    <li>&copy; Copyright <?php echo date("Y") ?></li>
                     <br>
-                    <p style="align: center">LXByte</p>
+                    <p style="align: center">LX - LXMOr</p>
                 </ul>
             </div>
 
@@ -640,18 +570,21 @@ $edad = $from->diff($to)->y;
 
 </footer>
 
-<script defer scr="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script defer src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script>
-    window.jQuery || document.write('<script defer scr="js/jquery-1.10.2.min.js"><\/script>')
+    window.jQuery || document.write('<script defer src="js/jquery-1.10.2.min.js"><\/script>')
 </script>
 <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
 
-<script defer scr="js/jquery.flexslider.js"></script>
-<script defer scr="js/waypoints.js"></script>
-<script defer scr="js/jquery.fittext.js"></script>
-<script defer scr="js/magnific-popup.js"></script>
-<script defer scr="js/init.js"></script>
-<script defer scr="js/print.js"></script>
+<script defer src="js/jquery.flexslider.js"></script>
+<script defer src="js/waypoints.js"></script>
+<script defer src="js/jquery.fittext.js"></script>
+<script defer src="js/magnific-popup.js"></script>
+<script defer src="js/init.js"></script>
+<script defer src="js/print.js"></script>
+<script defer src="js/typed.js/typed.min.js"></script>
+
+<script defer src="js/space.js"></script>
 
 </body>
 
