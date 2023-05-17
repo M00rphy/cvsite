@@ -16,14 +16,14 @@ $edad = $from->diff($to)->y;
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <link rel="stylesheet" href="css/default.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/media-queries.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/default.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/media-queries.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
 
     <script src="https://kit.fontawesome.com/10ae283bae.js"></script>
-    <script defer src="js/modernizr.js"></script>
+    <script defer src="assets/js/modernizr.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
             integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
@@ -56,7 +56,7 @@ $edad = $from->diff($to)->y;
     <div class="row banner">
         <div class="banner-text">
             <h1 class="responsive-headline neonText">Soy <span><img class="sq-com"
-                                                                    src="images/sqcompass.webp"></span>lexis
+                                                                    src="assets/images/sqcompass.webp"></span>lexis
                 Garcia</a></h1>
 
             <h3 class="neonText">
@@ -89,7 +89,7 @@ $edad = $from->diff($to)->y;
 
         <div class="three columns">
 
-            <img class="profile-pic" src="images/profilepic.png" alt=""/>
+            <img class="profile-pic" src="assets/images/profilepic.png" alt=""/>
 
         </div>
 
@@ -119,7 +119,7 @@ $edad = $from->diff($to)->y;
 
                 <div class="columns download">
                     <p>
-                        <a href="inc/CV.pdf" class="button"><i class="fa fa-download"></i>Descargar Curriculum</a>
+                        <a href="assets/inc/CV.pdf" class="button"><i class="fa fa-download"></i>Descargar Curriculum</a>
                         <!--a href="inc/cvTemp.html" class="button"><i class="fa fa-download"></i>Descargar Curriculum</a-->
                     </p>
                 </div>
@@ -263,7 +263,7 @@ $edad = $from->diff($to)->y;
                     <div class="item-wrap">
 
                         <a href="#TheSource" title="TheSource">
-                            <img alt="" src="images/portfolio/TheSource.png">
+                            <img alt="" src="assets/images/portfolio/TheSource.png">
                             <div class="overlay">
                                 <div class="portfolio-item-meta">
                                     <h5>TheSource</h5>
@@ -280,7 +280,7 @@ $edad = $from->diff($to)->y;
                     <div class="item-wrap">
 
                         <a href="#raycaster" title="Raycaster">
-                            <img alt="" src="images/portfolio/et.png">
+                            <img alt="" src="assets/images/portfolio/et.png">
                             <div class="overlay">
                                 <div class="portfolio-item-meta">
                                     <h5>Raycaster</h5>
@@ -297,7 +297,7 @@ $edad = $from->diff($to)->y;
                     <div class="item-wrap">
 
                         <a href="#fractal" title="FractalTrees">
-                            <img alt="" src="images/portfolio/fractal.png">
+                            <img alt="" src="assets/images/portfolio/fractal.png">
                             <div class="overlay">
                                 <div class="portfolio-item-meta">
                                     <h5>Fractal Trees</h5>
@@ -314,7 +314,7 @@ $edad = $from->diff($to)->y;
                     <div class="item-wrap">
 
                         <a href="#intersection" title="LineIntersection">
-                            <img alt="" src="images/portfolio/line.png">
+                            <img alt="" src="assets/images/portfolio/line.png">
                             <div class="overlay">
                                 <div class="portfolio-item-meta">
                                     <h5>Line Intersection</h5>
@@ -331,7 +331,7 @@ $edad = $from->diff($to)->y;
                     <div class="item-wrap">
 
                         <a href="#crud" title="CRUD">
-                            <img alt="" src="images/portfolio/crud.png">
+                            <img alt="" src="assets/images/portfolio/crud.png">
                             <div class="overlay">
                                 <div class="portfolio-item-meta">
                                     <h5>Sistema CRUD con PHP</h5>
@@ -348,7 +348,7 @@ $edad = $from->diff($to)->y;
                     <div class="item-wrap">
 
                         <a href="#frameworks" title="FrameworksJS">
-                            <img alt="" src="images/portfolio/frameworks.png">
+                            <img alt="" src="assets/images/portfolio/frameworks.png">
                             <div class="overlay">
                                 <div class="portfolio-item-meta">
                                     <h5>FrameworksJS</h5>
@@ -365,7 +365,7 @@ $edad = $from->diff($to)->y;
                     <div class="item-wrap">
 
                         <a href="#oxen" title="oxen">
-                            <img alt="" src="images/portfolio/oregon.png">
+                            <img alt="" src="assets/images/portfolio/oregon.png">
                             <div class="overlay">
                                 <div class="portfolio-item-meta">
                                     <h5>Oxen</h5>
@@ -382,7 +382,7 @@ $edad = $from->diff($to)->y;
                     <div class="item-wrap">
 
                         <a href="#atariGames" title="Atari Games">
-                            <img alt="" src="images/portfolio/atari.png">
+                            <img alt="" src="assets/images/portfolio/atari.png">
                             <div class="overlay">
                                 <div class="portfolio-item-meta">
                                     <h5>Juegos de Atari 2600</h5>
@@ -401,7 +401,7 @@ $edad = $from->diff($to)->y;
 
         <div id="TheSource" class="popup-modal mfp-hide">
 
-            <img class="scale-with-grid" src="images/portfolio/modals/m-TheSource.png" alt=""/>
+            <img class="scale-with-grid" src="assets/images/portfolio/modals/m-TheSource.png" alt=""/>
 
             <div class="description-box">
                 <h4>TheSource</h4>
@@ -418,7 +418,7 @@ $edad = $from->diff($to)->y;
 
         <div id="raycaster" class="popup-modal mfp-hide">
 
-            <img class="scale-with-grid" src="images/portfolio/modals/m-et.png" alt=""/>
+            <img class="scale-with-grid" src="assets/images/portfolio/modals/m-et.png" alt=""/>
 
             <div class="description-box">
                 <h4>Raycaster</h4>
@@ -435,7 +435,7 @@ $edad = $from->diff($to)->y;
 
         <div id="fractal" class="popup-modal mfp-hide">
 
-            <img class="scale-with-grid" src="images/portfolio/modals/m-fractal.png" alt=""/>
+            <img class="scale-with-grid" src="assets/images/portfolio/modals/m-fractal.png" alt=""/>
 
             <div class="description-box">
                 <h4>Fractal Trees</h4>
@@ -452,7 +452,7 @@ $edad = $from->diff($to)->y;
 
         <div id="intersection" class="popup-modal mfp-hide">
 
-            <img class="scale-with-grid" src="images/portfolio/modals/m-line.png" alt=""/>
+            <img class="scale-with-grid" src="assets/images/portfolio/modals/m-line.png" alt=""/>
 
             <div class="description-box">
                 <h4>Line Intersection</h4>
@@ -469,7 +469,7 @@ $edad = $from->diff($to)->y;
 
         <div id="crud" class="popup-modal mfp-hide">
 
-            <img class="scale-with-grid" src="images/portfolio/modals/m-crud.png" alt=""/>
+            <img class="scale-with-grid" src="assets/images/portfolio/modals/m-crud.png" alt=""/>
 
             <div class="description-box">
                 <h4>Sistema CRUD con PHP</h4>
@@ -486,7 +486,7 @@ $edad = $from->diff($to)->y;
 
         <div id="frameworks" class="popup-modal mfp-hide">
 
-            <img class="scale-with-grid" src="images/portfolio/modals/m-frameworks.png" alt=""/>
+            <img class="scale-with-grid" src="assets/images/portfolio/modals/m-frameworks.png" alt=""/>
 
             <div class="description-box">
                 <h4>FrameworksJS</h4>
@@ -503,7 +503,7 @@ $edad = $from->diff($to)->y;
 
         <div id="oxen" class="popup-modal mfp-hide">
 
-            <img class="scale-with-grid" src="images/portfolio/modals/m-oregon.png" alt=""/>
+            <img class="scale-with-grid" src="assets/images/portfolio/modals/m-oregon.png" alt=""/>
 
             <div class="description-box">
                 <h4>Oxen</h4>
@@ -520,7 +520,7 @@ $edad = $from->diff($to)->y;
 
         <div id="atariGames" class="popup-modal mfp-hide">
 
-            <img class="scale-with-grid" src="images/portfolio/modals/m-atari.png" alt=""/>
+            <img class="scale-with-grid" src="assets/images/portfolio/modals/m-atari.png" alt=""/>
 
             <div class="description-box">
                 <h4>Juegos de Atari 2600</h4>
@@ -573,19 +573,19 @@ $edad = $from->diff($to)->y;
 
 <script defer src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script>
-    window.jQuery || document.write('<script defer src="js/jquery-1.10.2.min.js"><\/script>')
+    window.jQuery || document.write('<script defer src="assets/js/jquery-1.10.2.min.js"><\/script>')
 </script>
-<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery-migrate-1.2.1.min.js"></script>
 
-<script defer src="js/jquery.flexslider.js"></script>
-<script defer src="js/waypoints.js"></script>
-<script defer src="js/jquery.fittext.js"></script>
-<script defer src="js/magnific-popup.js"></script>
-<script defer src="js/init.js"></script>
-<script defer src="js/print.js"></script>
-<script defer src="js/typed.js/typed.min.js"></script>
+<script defer src="assets/js/jquery.flexslider.js"></script>
+<script defer src="assets/js/waypoints.js"></script>
+<script defer src="assets/js/jquery.fittext.js"></script>
+<script defer src="assets/js/magnific-popup.js"></script>
+<script defer src="assets/js/init.js"></script>
+<script defer src="assets/js/print.js"></script>
+<script defer src="assets/js/typed.js/typed.min.js"></script>
 
-<script defer src="js/space.js"></script>
+<script defer src="assets/js/space.js"></script>
 
 </body>
 

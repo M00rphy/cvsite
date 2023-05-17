@@ -2,7 +2,7 @@ document.onreadystatechange = () => {
     var w = window.innerWidth;
     var h = window.innerHeight;
 
-    var erised = new Audio('audio/erised.mp3')
+    var erised = new Audio('assets/audio/erised.mp3')
     erised.volume = 0.1
 
     window.onresize = function () {

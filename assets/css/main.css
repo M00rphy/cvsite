@@ -57,7 +57,7 @@ h1 .neonText {
 .sq-com:before {
 
     display: block;
-    content: url(../images/sqcompass.svg);
+    content: url(sqcompass.svg);
 }
 
 .sq-com {

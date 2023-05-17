@@ -1,8 +1,8 @@
 $(function () {
 
-    const clickSfx = new Audio('audio/sfx/click3.ogg');
+    const clickSfx = new Audio('assets/audio/sfx/click3.ogg');
     clickSfx.volume = 0.5
-    const click2Sfx = new Audio('audio/sfx/menuclickup.ogg');
+    const click2Sfx = new Audio('assets/audio/sfx/menuclickup.ogg');
 
     document.addEventListener('click', () => {
         document.getElementById('nav').querySelectorAll('li').forEach(navBtn => {
