@@ -1,7 +1,7 @@
 <?php
 extract($_POST);
-var_dump($_POST);
-die();
+// var_dump($_POST);
+// die();
 
 $salts = ["$2e", "$37", "$73", "$3"];
 

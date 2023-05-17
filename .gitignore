@@ -5,3 +5,4 @@ readme.txt
 package-lock.json
 package.json
 node_modules
+/.vscode
