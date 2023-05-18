@@ -1,7 +1,3 @@
-* {
-    /*overflow-x: hidden;*/
-}
-
 table {
     color: black;
     border: 1px solid black;
@@ -57,7 +53,7 @@ h1 .neonText {
 .sq-com:before {
 
     display: block;
-    content: url(sqcompass.svg);
+    content: url(../images/sqcompass.svg);
 }
 
 .sq-com {
