@@ -1,4 +1,6 @@
-<?php $from = new DateTime('1997-03-13');
+<?php
+include("admin/php/bdayFooter.php");
+$from = new DateTime($bday['bday']);
 $to = new DateTime('today');
 $edad = $from->diff($to)->y;
 ?>
@@ -70,7 +72,7 @@ $edad = $from->diff($to)->y;
             <div class="three columns"><img class="profile-pic" src="assets/images/profilepic.png" alt="" /></div>
             <div class="nine columns main-col">
                 <h2>Acerca de mi.</h2>
-                <p class="aboutme">Tengo <?php echo $edad ?>años,
+                <p class="aboutme">Tengo <?php echo $edad ?> años,
                     y cuento con experiencia en varias tecnologías Web. </p>
                 <div class="row">
                     <div class="columns contact-details">
