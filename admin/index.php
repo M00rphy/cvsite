@@ -71,16 +71,16 @@
 <body class="text-center">
 
 <div class="form-signin bg-light">
-    <form action="php/login.php" method="post">
+    <form action="#">
         <img class="mb-4" src="../assets/images/lx.webp" alt="" width="72">
         <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
         <div class="form-floating">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
+            <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
             <label for="floatingInput">Email address</label>
         </div>
         <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+            <input type="password" class="form-control" id="password" placeholder="Password"
                    name="password">
             <label for="floatingPassword">Password</label>
         </div>
@@ -90,7 +90,7 @@
                 <input type="checkbox" value="remember-me"> Remember me
             </label>
         </div>
-        <button class="w-100 btn btn-lg btn-dark" type="submit">Sign in</button>
+        <button class="w-100 btn btn-lg btn-dark" id="signin">Sign in</button>
 
         <p class="mt-5 mb-3 text-muted">&copy; <?php echo date('Y') ?></p>
     </form>
